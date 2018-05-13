@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+window.onload=function() {
+	var oBnt=document.getElementById("bnt");
+	function loadXMLDoc() {
+		var xmlhttp;
+		var oBtn=document.getElementById("btn");
+		if (window.XMLHttpRequest) {
+			// IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+			xmlhttp=new XMLHttpRequest();
+		}else {
+			// IE6, IE5 浏览器执行代码
+			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange=function() {
+			if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+				document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+			}
+		}
+		xmlhttp.open("GET","ajax1.php",true);
+		xmlhttp.send(); 
+	}
+	oBnt.onclick=loadXMLDoc;
+}
+
+</script>
+</head>
+<body>
+
+<h2>AJAX</h2>
+<input type="button" id="bnt" value="亲求数据" />
+<div id="myDiv"></div>
+ 
+</body>
+</html>
