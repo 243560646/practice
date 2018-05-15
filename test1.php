@@ -10,3 +10,4 @@ $w=123;
 $t=9800;
 $s=$w+$t;
 echo 'wangzhe rongyao';
+echo 'ok';
